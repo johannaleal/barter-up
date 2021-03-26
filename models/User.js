@@ -5,14 +5,14 @@ const userSchema = new Schema({
   email: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
     // add email validations
   },
   password: {
     type: String,
-    required: true
-  }
-})
+    required: true,
+  },
+});
 
 const User = mongoose.model("User", userSchema);
 

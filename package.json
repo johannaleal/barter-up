@@ -1,31 +1,36 @@
 {
-    "name": "barter-up",
-    "version": "1.0.0",
-    "description": "",
-    "main": "server.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "if-env NODE_ENV=production && npm run start-production || npm run start-dev",
-        "start-production": "node server.js",
-        "start-dev": "concurrently \"nodemon server.js\" \"cd client && npm start\"",
-        "install": "cd client && npm install",
-        "build": "cd client && npm run build",
-        "heroku-postbuild": "npm run build"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-        "concurrently": "^6.0.0",
-        "nodemon": "^2.0.7"
-    },
-    "dependencies": {
-        "dotenv": "^8.2.0",
-        "express": "^4.17.1",
-        "if-env": "^1.0.4",
-        "mongoose": "^5.12.2",
-        "passport": "^0.4.1",
-        "passport-jwt": "^4.0.0",
-        "passport-local": "^1.0.0"
-    }
+  "name": "barter-up",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "lint": "eslint src/**/*.js src/**/*.jsx",
+    "pretty": "prettier --write \"./**/*.{js,jsx,json}\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "if-env NODE_ENV=production && npm run start-production || npm run start-dev",
+    "start-production": "node server.js",
+    "start-dev": "concurrently \"nodemon server.js\" \"cd client && npm start\"",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^6.0.0",
+    "eslint": "^7.22.0",
+    "eslint-config-google": "^0.14.0",
+    "nodemon": "^2.0.7",
+    "prettier": "2.2.1"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.12.2",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
+  }
 }

@@ -6,15 +6,15 @@ const AuthenticatedApp = () => {
 
   const logout = () => {
     localStorage.removeItem("userInfo");
-    dispatch({ type: LOGOUT })
-  }
+    dispatch({ type: LOGOUT });
+  };
 
   return (
     <>
       <p> You're logged in.</p>
       <button onClick={logout}>Logout</button>
     </>
-  )
-}
+  );
+};
 
-export default AuthenticatedApp
+export default AuthenticatedApp;
