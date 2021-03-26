@@ -1,8 +1,5 @@
 import { createContext, useReducer, useContext } from "react";
-import {
-  LOGIN,
-  LOGOUT
-} from "./actions";
+import { LOGIN, LOGOUT } from "./actions";
 
 // create a context
 const GlobalContext = createContext();
@@ -13,40 +10,37 @@ const { Provider } = GlobalContext;
 const reducer = (state, action) => {
   switch (action.type) {
     case LOGIN:
-      return { 
-        ...state, 
+      return {
+        ...state,
         email: action.email,
-        userToken: action.token
-      }
+        userToken: action.token,
+      };
     case LOGOUT:
-      return { 
-        ...state, 
+      return {
+        ...state,
         email: "",
-        userToken: ""
-      }
+        userToken: "",
+      };
     default:
-      return state
+      return state;
   }
-}
+};
 
 // custom provider to connect state with the context
 const GlobalProvider = ({ value = [], ...props }) => {
   // setup some state with useReducer
   const [state, dispatch] = useReducer(reducer, {
     userToken: "",
-    email: ""
-  })
+    email: "",
+  });
   // pass the state to the provider
-  return <Provider value={[state, dispatch]} {...props} />
-}
+  return <Provider value={[state, dispatch]} {...props} />;
+};
 
 // custom hook
 const useGlobalContext = () => {
   return useContext(GlobalContext);
-}
+};
 
 // export the hook and the provider
-export {
-  GlobalProvider,
-  useGlobalContext
-}
+export { GlobalProvider, useGlobalContext };
