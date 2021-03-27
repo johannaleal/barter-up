@@ -1,5 +1,5 @@
 const Router = require("express").Router();
-const passport = require("../authentication/passport");
+const passport = require("../../authentication/passport");
 
 Router.get(
   "/protected",
