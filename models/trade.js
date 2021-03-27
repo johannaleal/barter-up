@@ -12,7 +12,7 @@ const tradeSchema = new Schema(
       required: true,
     },
     barterType: {
-      type: string,
+      type: String,
       enum: ["Cash", "Trade", "Cash + Trade"],
       required: true
     },
